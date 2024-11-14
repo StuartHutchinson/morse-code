@@ -6,21 +6,21 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 from flask_bootstrap import Bootstrap5
 
+from dotenv import load_dotenv
+load_dotenv()
+
 app = Flask(__name__)
-SECRET_KEY = os.urandom(32)
-app.config['SECRET_KEY'] = SECRET_KEY
+app.config['SECRET_KEY'] = os.environ["FLASK_KEY"]
 bootstrap = Bootstrap5(app)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+	# return "Test"
 	form = BasicForm()
 	encoded = ""
 	if form.validate_on_submit():
 		encoded = encode(form.user_input.data)
 	return render_template("index.html", form=form, encoded=encoded)
-	# return "Morse Code!"
-	# return "Test Test      Test"
-	# return encode()
 
 code = {'A':'▄ ▄▄▄',
         'B':'▄▄▄ ▄ ▄ ▄',
