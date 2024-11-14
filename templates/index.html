@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% from "bootstrap5/form.html" import render_form %}
+
+    <h1>Create morse code!</h1>
+
+    {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+
+    <h2>In Morse Code:</h2>
+    <p>{{ encoded }}</p>
+{% endblock %}
