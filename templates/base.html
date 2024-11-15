@@ -43,11 +43,13 @@
         </header>
 
         <!-- Your page content -->
+        <div class="page-content">
         {% block content %}{% endblock %}
 
         {% block scripts %}
             <!-- Optional JavaScript -->
             {{ bootstrap.load_js() }}
         {% endblock %}
+        </div>
     </body>
 </html>

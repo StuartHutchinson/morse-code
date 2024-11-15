@@ -1280,3 +1280,7 @@ pre {
     word-wrap: break-word; /* Break long words if necessary */
     overflow-wrap: break-word; /* Ensures compatibility for modern browsers */
   }
+
+.page-content {
+    padding-top: 100px;
+}
