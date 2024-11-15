@@ -206,7 +206,8 @@ h6 {
   background: var(--accent-color);
 }
 
-@media (min-width: 1200px) {
+/*stop the nav bar disappearing on mobile*/
+/*@media (min-width: 1200px) {
 
   .header~main,
   .header~#footer {
@@ -218,7 +219,7 @@ h6 {
   .header {
     left: -100%;
   }
-}
+}*/
 
 .header.header-show {
   left: 0;
